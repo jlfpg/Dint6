@@ -1,10 +1,10 @@
-package jorge.dint6;
+package jorge.dint;
 
 import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import jorge.dint6.GameMain;
+import jorge.dint.GameMain;
 
 public class AndroidLauncher extends AndroidApplication {
 	@Override

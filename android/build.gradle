@@ -1,5 +1,5 @@
 android {
-    buildToolsVersion "27.0.1"
+    buildToolsVersion "27.0.3"
     compileSdkVersion 27
     sourceSets {
         main {
@@ -18,7 +18,7 @@ android {
         exclude 'META-INF/robovm/ios/robovm.xml'
     }
     defaultConfig {
-        applicationId "jorge.dint6"
+        applicationId "jorge.dint"
         minSdkVersion 9
         targetSdkVersion 27
         versionCode 1
@@ -79,7 +79,7 @@ task run(type: Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'jorge.dint6/jorge.dint6.AndroidLauncher'
+    commandLine "$adb", 'shell', 'am', 'start', '-n', 'jorge.dint/jorge.dint.AndroidLauncher'
 }
 
 // sets up the Android Eclipse project, using the old Ant based build.

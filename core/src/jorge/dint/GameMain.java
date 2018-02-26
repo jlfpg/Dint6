@@ -1,4 +1,4 @@
-package jorge.dint6;
+package jorge.dint;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
