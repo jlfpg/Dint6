@@ -6,22 +6,41 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+
 public class GameMain extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
-	
+	float accelX;
+	float accelY;
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
+		img = new Texture("balon.png");
+
+		accelX = 200;
+		accelY = 200;
 	}
 
 	@Override
 	public void render () {
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+		if (Gdx.input.getAccelerometerY() < 0) {
+			accelX += Gdx.input.getAccelerometerY();
+		} else if (Gdx.input.getAccelerometerY() > 0) {
+			accelX += Gdx.input.getAccelerometerY();
+		}
+
+		if (Gdx.input.getAccelerometerX() < 0) {
+			accelY -= Gdx.input.getAccelerometerX();
+		} else if (Gdx.input.getAccelerometerX() > 0) {
+			accelY -= Gdx.input.getAccelerometerX();
+		}
+
 		batch.begin();
-		batch.draw(img, 0, 0);
+		batch.draw(img, accelX, accelY, 200, 200);
 		batch.end();
 	}
 	
@@ -30,4 +49,5 @@ public class GameMain extends ApplicationAdapter {
 		batch.dispose();
 		img.dispose();
 	}
+
 }
